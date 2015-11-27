@@ -1,5 +1,4 @@
 #!bin/bash
-# created by WINCKELL Benjamin
 source ./toolsScript/color.sh
 
 hookName=""

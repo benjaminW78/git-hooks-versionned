@@ -1,5 +1,4 @@
 #!/bin/bash
-# created by WINCKELL Benjamin 
 # Use this file to setup the hooks usefull for this repository after your git clone
 
 # test if symlink installed

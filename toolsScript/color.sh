@@ -1,5 +1,4 @@
 #!/bin/bash
-# created by WINCKELL Benjamin 
 
 GREEN="\\033[1;32m"
 NORMAL="\\033[0;39m"
