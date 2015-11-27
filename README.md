@@ -5,8 +5,12 @@
 ### source for the hook-chain.sample here: http://stackoverflow.com/a/8734391
 
 # Explanation
-This folder will contain every hook scripted by Companeo for developers pc or preproduction/release servers
+This repository is build for deploy, share, and manage hooks easely inside a git project 
 those hooks will be triggered at some specific git actions like checkout or commit etc...
+
+`hook-chain.sample` is the main script of this project and it is created by Orfalo, you could see the original post here : http://stackoverflow.com/a/8734391.
+
+I also provided a script to deploys every hook from one env to the .git/ of your repository
 
 # files tree
 
@@ -19,8 +23,9 @@ those hooks will be triggered at some specific git actions like checkout or comm
     │   ├── post-checkout.01_pull // first sub hook to be called
     │   ├── post-checkout.02_gruntComposer // second
     │   ├── post-checkout.03_npmInstall // etc
-    │   ├── post-checkout.04_tasksRunner //last sub hook which contain every grunt build cmd you want to run after every checkout
-    │   ├── pre-commit
+    │   ├── post-checkout.04_tasksRunner //run every grunt or gulp or what ever you want inside this.
+    │   ├── post-checkout.05_re_auto_deploy_hooks // auto deploy every hooks
+    │   ├── pre-commit
     │   └── pre-commit.01_esLint_js_files
     ├── hook-chain.sample // root file for create sub hooks
     ├── preProd // folder for preprod hooks
@@ -31,13 +36,15 @@ those hooks will be triggered at some specific git actions like checkout or comm
         └── logHook.sh
     ```
 # How To Deploy hooks for Dev or Staging
-	
-Run `deployHooks.sh` with one param `development` or `staging`
+
+1. Copy those files inside your current git repository.
+
+2. Run `deployHooks.sh` with one param `development` or `staging`
 
 ## Params explanation
 
 1. development: use this params on developers pc only.
-2. staging: use this params on preprod and release servers only.
+2. staging: use this params on preprod server only.
 
 
     ```shell
@@ -63,3 +70,13 @@ Run `deployHooks.sh` with one param `development` or `staging`
 		```shell
 			/bin/bash deployHooks.sh
 		```
+
+
+# Scripts description
+## deployHook.sh
+
+Simply create sym link from the directory you specified by select env param. Don't hesitate to rewrite this file for your needs
+
+## createNewHook.sh
+
+copy hook-chain.sample to the good directory and rename it by the selected hook name 
