@@ -1,8 +1,7 @@
 # Hooks deployment automation
 
-### created by Winckell benjamin 
-### what are git hooks: https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks
-### source for the hook-chain.sample here: http://stackoverflow.com/a/8734391
+#### what are git hooks: https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks
+#### source for the hook-chain.sample here: http://stackoverflow.com/a/8734391
 
 # Explanation
 This repository is build for deploy, share, and manage hooks easely inside a git project 
