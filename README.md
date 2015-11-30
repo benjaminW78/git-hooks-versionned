@@ -1,5 +1,5 @@
 # Hooks deployment automation
-#### developed at companeo
+#### developed at [companeo](http://www.companeo.com/)
 #### what are git hooks: https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks
 #### source for the hook-chain.sample here: http://stackoverflow.com/a/8734391
 
