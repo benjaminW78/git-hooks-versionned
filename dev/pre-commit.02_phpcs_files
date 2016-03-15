@@ -1,0 +1,36 @@
+#!/bin/bash
+# created by WINCKELL Benjamin
+source /var/www/companeo_v6/_sys/companeo_hooks/toolsScript/logHook.sh
+
+log_start
+cd /var/www/companeo_v6/
+
+files=$(git diff --cached --name-only --diff-filter=ACM | grep "\.php$")
+if [ "$files" = "" ]; then
+    log_end
+    exit 0
+fi
+
+pass=0
+
+echo -e "\nValidating Php code Sniffer:\n"
+
+for file in ${files}; do
+
+    if [[ "$file" != "src/libjs/Gruntfile.js" ]]; then
+        /var/www/companeo_v6/core/lib/vendor/bin/phpcs --standard=PSR2 --extensions=php "/var/www/companeo_v6/$file"
+        if [[ "$?" = 0 ]]; then
+            echo -e "\t\033[32mPhpCodeSniffer Passed: $file\033[0m"
+            echo -e "---------------------------------------------------------------------------------------------"
+
+        else
+            echo -e "\t\033[41mPhpCodeSniffer Failed: $file\033[0m"
+            echo -e "---------------------------------------------------------------------------------------------"
+            pass=1
+        fi
+    fi
+done
+
+log_end
+
+exit $pass
