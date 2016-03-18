@@ -4,8 +4,9 @@
 #### source for the hook-chain.sample here: http://stackoverflow.com/a/8734391
 
 # Explanation
-This repository is build for deploy, share, and manage hooks easely inside a git project 
-those hooks will be triggered at some specific git actions like checkout or commit etc...
+This repository is build for deploy, share, and manage hooks easely inside a git project.
+
+Those hooks will be triggered at some specific git actions like checkout or commit etc...
 
 `hook-chain.sample` is the main script of this project and it is created by Orfalo, you could see the original post here : http://stackoverflow.com/a/8734391.
 
@@ -64,6 +65,7 @@ I also provided a script to deploys every hook from one env to the .git/ of your
     - myHookName: 	is the same as the one you choosed for hook-chain.sample copy name
     - xx:  			incremental number to be sure of execute you hook in a good order
     - taskTodo: 		replace by the name of what this sub hook will do
+    
 3. Run `deployHooks.sh` like explained before at How to Deploy section
 
 		```shell
