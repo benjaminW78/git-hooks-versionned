@@ -3,6 +3,7 @@
 MY_DIR=$(dirname $(readlink -f $0))
 source $MY_DIR/../toolsScript/color.sh
 
+
 function log_start {	
 	echo -e "$GREEN""---------Hook ""$RED""$0""$GREEN""---------\n""$NORMAL"
 }
