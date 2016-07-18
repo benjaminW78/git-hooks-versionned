@@ -35,7 +35,7 @@ do
 echo "$file"
 ln -s -f $file $pathGitDir/.git/hooks/
 done
-
+ rm -rvf $pathGitDir/.git/hooks/*.sample
 echo '... OK'
 
 echo 'listing files symlink inside .git/hooks/ \n'
